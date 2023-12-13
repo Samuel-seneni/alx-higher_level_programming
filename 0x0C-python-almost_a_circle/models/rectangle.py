@@ -56,8 +56,8 @@ class Rectangle(Base):
         """set the value x of the rectangle"""
         if not isinstance(value, int) or isinstance(value, bool):
             raise TypeError("x must be an integer")
-        if value <= 0:
-            raise ValueError("x must be > 0")
+        if value < 0:
+            raise ValueError("x must be >= 0")
         self.__x  = value
 
     @property
@@ -70,7 +70,7 @@ class Rectangle(Base):
         """set the value y of the rectangle"""
         if not isinstance(value, int) or isinstance(value, bool):
             raise TypeError("y must be an integer")
-        if value <= 0:
+        if value < 0:
             raise ValueError("y must be > 0")
         self.__y  = value
 
